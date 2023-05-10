@@ -1,21 +1,49 @@
-import React, { useEffect, useRef } from "react";
-
-import logo from "./logo.svg";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { Page1 } from "./Page1";
+import { Page2 } from "./Page2";
+import { Page3 } from "./Page3";
 
 function App() {
+  const [firstPage, setFirstPage] = useState(true);
+  const [secondPage, setSecondPage] = useState(false);
+  const [thirdPage, setThirdPage] = useState(false);
+  const [upDown, setUpDown] = useState(true);
+  const [firstToSecondPage, setFirstToSecondPage] = useState(true);
+  const [secondToThirdPage, setSecondToThirdPage] = useState(false);
+
   const outerDivRef = useRef();
   useEffect(() => {
     const wheelHandler = (e: any) => {
       e.preventDefault();
       const { deltaY } = e;
       if (deltaY > 0) {
+        setUpDown(true);
+        console.log(upDown);
         // 스크롤 내릴 때
-        console.log("1");
+        if (firstPage) {
+          setFirstPage(!firstPage);
+          setSecondPage(!secondPage);
+        } else if (secondPage) {
+          setSecondPage(!secondPage);
+          setThirdPage(!thirdPage);
+          setSecondToThirdPage(true);
+          setFirstToSecondPage(false);
+        }
       } else {
+        setUpDown(false);
+        console.log(upDown);
         // 스크롤 올릴 때
-        console.log("2");
+        if (thirdPage) {
+          setThirdPage(!thirdPage);
+          setSecondPage(!secondPage);
+        } else if (secondPage) {
+          setSecondPage(!secondPage);
+          setFirstPage(!firstPage);
+          setFirstToSecondPage(true);
+          setSecondToThirdPage(false);
+        }
       }
     };
     const outerDivRefCurrent: any = outerDivRef.current;
@@ -23,7 +51,7 @@ function App() {
     return () => {
       outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
     };
-  }, []);
+  });
   return (
     // <div className="App">
     //   <header className="App-header">
@@ -42,9 +70,47 @@ function App() {
     //   </header>
     // </div>
     <Wrapper ref={outerDivRef}>
-      <Page1>gd</Page1>
-      <Page2>gd</Page2>
-      <Page3>gd</Page3>
+      {firstPage ? (
+        <>
+          <Page1 upDown={upDown} firstToSecondPage={firstToSecondPage} />
+          <Page2
+            upDown={upDown}
+            firstToSecondPage={firstToSecondPage}
+            secondToThirdPage={secondToThirdPage}
+          />
+        </>
+      ) : secondPage ? (
+        <>
+          {upDown ? (
+            <>
+              <Page2
+                upDown={upDown}
+                firstToSecondPage={firstToSecondPage}
+                secondToThirdPage={secondToThirdPage}
+              />
+              <Page1 upDown={upDown} firstToSecondPage={firstToSecondPage} />
+            </>
+          ) : (
+            <>
+              <Page2
+                upDown={upDown}
+                firstToSecondPage={firstToSecondPage}
+                secondToThirdPage={secondToThirdPage}
+              />
+              <Page3 upDown={upDown} secondToThirdPage={secondToThirdPage} />
+            </>
+          )}
+        </>
+      ) : (
+        <>
+          <Page3 upDown={upDown} secondToThirdPage={secondToThirdPage} />
+          <Page2
+            upDown={upDown}
+            firstToSecondPage={firstToSecondPage}
+            secondToThirdPage={secondToThirdPage}
+          />
+        </>
+      )}
     </Wrapper>
   );
 }
@@ -52,35 +118,59 @@ function App() {
 export default App;
 
 const Wrapper = styled.div<{ ref: any }>`
-  overflow-y: auto;
-`;
-const Page1 = styled.div`
-  background-color: yellow;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   width: 100vw;
   height: 100vh;
-  position: relative;
+  overflow-y: hidden;
 `;
-const Page2 = styled.div`
-  background-color: blue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
+export const boxFadeInUP = keyframes`
+   0%{
+  transform: translateY(-100%);
+  opacity: 1;
+}
+50%{ 
+  transform: translateY(-50%);
+}
+100%{
+  transform: translateY(0%);
+  opacity: 1;
+}
 `;
-const Page3 = styled.div`
-  background-color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
+export const boxFadeInDown = keyframes`
+   0%{
+  transform: translateY(100%);
+  opacity: 1;
+}
+50%{ 
+  transform: translateY(50%);
+}
+100%{
+  transform: translateY(0%);
+  opacity: 1;
+}
+`;
+export const boxFadeOutUP = keyframes`
+   0%{
+  transform: translateY(-100%);
+  opacity: 1;
+}
+50%{ 
+  transform: translateY(-50%);
+}
+100%{
+  transform: translateY(0%);
+  opacity: 1;
+}
+`;
+export const boxFadeOutDown = keyframes`
+   0%{
+  transform: translateY(-100%);
+  opacity: 1;
+}
+50%{ 
+  transform: translateY(-150%);
+}
+100%{
+  transform: translateY(-200%);
+  opacity: 1;
+}
 `;
