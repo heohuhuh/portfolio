@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./App.css";
 import styled, { keyframes } from "styled-components";
 import { Page1 } from "./Page1";
 import { Page2 } from "./Page2";
 import { Page3 } from "./Page3";
+import myGif from "./gifs/Scroll.gif";
 
 function App() {
   const [firstPage, setFirstPage] = useState(true);
@@ -111,6 +111,7 @@ function App() {
           />
         </>
       )}
+      {/* <Footer src={myGif} /> */}
     </Wrapper>
   );
 }
@@ -173,4 +174,9 @@ export const boxFadeOutDown = keyframes`
   transform: translateY(-200%);
   opacity: 1;
 }
+`;
+
+const Footer = styled.img`
+  position: absolute;
+  bottom: 0;
 `;
