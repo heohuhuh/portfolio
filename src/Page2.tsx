@@ -22,7 +22,20 @@ export function Page2({
       firstToSecondPage={firstToSecondPage}
       secondToThirdPage={secondToThirdPage}
     >
-      결과물
+      <VanilaJS>
+        <JavaScript>JavaScript</JavaScript>
+        <JStodo>todo</JStodo>
+        <JSweather>weather</JSweather>
+        <JStyping>typing</JStyping>
+        <JSpuzzle>puzzle</JSpuzzle>
+      </VanilaJS>
+
+      <ReactWrapper>
+        <React>React</React>
+        <ReactTodo>todo</ReactTodo>
+        <ReactBase>numberbaseball</ReactBase>
+        <ReactClone>insta clone</ReactClone>
+      </ReactWrapper>
     </Page2Wrapper>
   );
 }
@@ -32,11 +45,10 @@ const Page2Wrapper = styled.div<{
   firstToSecondPage: boolean;
   secondToThirdPage: boolean;
 }>`
-  background-color: blue;
+  background-color: #ddffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   width: 100%;
   height: 100%;
   position: relative;
@@ -67,3 +79,37 @@ const Page2Wrapper = styled.div<{
       animation: ${boxFadeOutDown} 0.5s 0s linear;
     `}
 `;
+
+const VanilaJS = styled.div`
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 460px;
+  height: 640px;
+`;
+
+const JavaScript = styled.div`
+  top: 10%;
+`;
+
+const JStodo = styled.div``;
+const JSweather = styled.div``;
+const JStyping = styled.div``;
+const JSpuzzle = styled.div``;
+
+const ReactWrapper = styled.div`
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 460px;
+  height: 640px;
+`;
+
+const React = styled.div``;
+const ReactTodo = styled.div``;
+const ReactBase = styled.div``;
+const ReactClone = styled.div``;

@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 import { boxFadeInUP, boxFadeOutDown } from "./App";
 
 type propsType = {
