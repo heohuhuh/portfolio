@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { boxFadeInUP, boxFadeOutDown } from "./App";
+import ProfilePhoto from "./imgs/허진욱님_증명사진.jpg";
 
 type propsType = {
   upDown: boolean;
@@ -8,7 +9,7 @@ type propsType = {
 export function Page1({ upDown, firstToSecondPage }: propsType) {
   return (
     <Page1Wrapper upDown={upDown} firstToSecondPage={firstToSecondPage}>
-      <Photo>사진</Photo>
+      <Photo src={ProfilePhoto} alt="ProfilePhoto" />
 
       <Profile>
         <Name>허 진 욱</Name>
@@ -47,13 +48,13 @@ const Page1Wrapper = styled.div<{
     `}
 `;
 
-const Photo = styled.div`
-  border: solid 1px black;
+const Photo = styled.img`
+  border-radius: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 460px;
-  height: 640px;
+  height: 590px;
 `;
 
 const Profile = styled.div`

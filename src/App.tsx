@@ -20,7 +20,6 @@ function App() {
       const { deltaY } = e;
       if (deltaY > 0) {
         setUpDown(true);
-        console.log(upDown);
         // 스크롤 내릴 때
         if (firstPage) {
           setFirstPage(!firstPage);
@@ -33,7 +32,6 @@ function App() {
         }
       } else {
         setUpDown(false);
-        console.log(upDown);
         // 스크롤 올릴 때
         if (thirdPage) {
           setThirdPage(!thirdPage);
