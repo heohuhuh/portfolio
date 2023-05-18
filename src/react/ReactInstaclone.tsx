@@ -1,0 +1,52 @@
+import ReactInstacloneJPG from "../imgs/ReactInstaclone.jpg";
+import instaclone from "../imgs/gifs/instaclone.gif";
+import { ContentName, Test } from "../Page2";
+import { ContentCSS, ContentImgCSS } from "../js/JStodo";
+import styled from "styled-components";
+import { useState } from "react";
+
+type props = {
+  setModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+export function ReactInstaclone({ setModal }: props) {
+  const [preview, setPreview] = useState(false);
+  return (
+    <ReactInstacloneWrapper>
+      <ContentName>인스타 클론코딩</ContentName>
+      <Test src={instaclone} alt="" preview={preview}></Test>
+      <ReactInstacloneImg
+        src={ReactInstacloneJPG}
+        alt=""
+        onPointerOver={() => {
+          setPreview(true);
+        }}
+        onPointerLeave={() => {
+          setPreview(false);
+        }}
+        onClick={() => {
+          console.log("hi");
+          setModal(true);
+          return (
+            <div
+              style={{
+                width: "300px",
+                height: "300px",
+                backgroundColor: "#000000",
+                position: "absolute",
+              }}
+            >
+              하이
+            </div>
+          );
+        }}
+      />
+    </ReactInstacloneWrapper>
+  );
+}
+
+export const ReactInstacloneWrapper = styled.div`
+  ${ContentCSS}
+`;
+export const ReactInstacloneImg = styled.img`
+  ${ContentImgCSS}
+`;
