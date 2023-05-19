@@ -1,13 +1,14 @@
 import styled, { css } from "styled-components";
-import { Test, ContentName } from "../Page2";
+import { LeftPreview, ContentName } from "../Page2";
 import JSTodoJPG from "../imgs/todo2.jpg";
 import todoGif from "../imgs/gifs/todo.gif";
 import { useState } from "react";
 
 type props = {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalSwitch: React.Dispatch<React.SetStateAction<string>>;
 };
-export function JStodo({ setModal }: props) {
+export function JStodo({ setModal, setModalSwitch }: props) {
   const [preview, setPreview] = useState(false);
   return (
     <JStodoWrapper>
@@ -21,8 +22,8 @@ export function JStodo({ setModal }: props) {
           setPreview(false);
         }}
         onClick={() => {
-          console.log("hi");
           setModal(true);
+          setModalSwitch("JSTodo");
           return (
             <div
               style={{
@@ -37,7 +38,7 @@ export function JStodo({ setModal }: props) {
           );
         }}
       />
-      <Test src={todoGif} alt="" preview={preview}></Test>
+      <LeftPreview src={todoGif} alt="" preview={preview}></LeftPreview>
       <ContentName>TodoList</ContentName>
     </JStodoWrapper>
   );

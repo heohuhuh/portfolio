@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import puzzleGif from "../imgs/gifs/puzzle.gif";
-import { Test, ContentName } from "../Page2";
+import { LeftPreview, ContentName } from "../Page2";
 import { ContentCSS, ContentImgCSS } from "./JStodo";
 import JSPuzzleJPG from "../imgs/JSPuzzle2.jpg";
 import { useState } from "react";
 
 type props = {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalSwitch: React.Dispatch<React.SetStateAction<string>>;
 };
-export function JSPuzzle({ setModal }: props) {
+export function JSPuzzle({ setModal, setModalSwitch }: props) {
   const [preview, setPreview] = useState(false);
   return (
     <JSPuzzleWrapper>
@@ -22,8 +23,8 @@ export function JSPuzzle({ setModal }: props) {
           setPreview(false);
         }}
         onClick={() => {
-          console.log("hi");
           setModal(true);
+          setModalSwitch("JSPuzzle");
           return (
             <div
               style={{
@@ -38,7 +39,7 @@ export function JSPuzzle({ setModal }: props) {
           );
         }}
       />
-      <Test src={puzzleGif} alt="" preview={preview}></Test>
+      <LeftPreview src={puzzleGif} alt="" preview={preview}></LeftPreview>
       <ContentName>퍼즐 게임</ContentName>
     </JSPuzzleWrapper>
   );

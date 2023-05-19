@@ -1,14 +1,15 @@
 import JSWeatherJPG from "../imgs/JSweather2.jpg";
 import weatherGif from "../imgs/gifs/weather.gif";
 import styled from "styled-components";
-import { Test, ContentName } from "../Page2";
+import { LeftPreview, ContentName } from "../Page2";
 import { ContentCSS, ContentImgCSS } from "./JStodo";
 import { useState } from "react";
 
 type props = {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalSwitch: React.Dispatch<React.SetStateAction<string>>;
 };
-export function JSWeather({ setModal }: props) {
+export function JSWeather({ setModal, setModalSwitch }: props) {
   const [preview, setPreview] = useState(false);
   return (
     <JSWeatherWrapper>
@@ -22,8 +23,8 @@ export function JSWeather({ setModal }: props) {
           setPreview(false);
         }}
         onClick={() => {
-          console.log("hi");
           setModal(true);
+          setModalSwitch("JSWeather");
           return (
             <div
               style={{
@@ -38,7 +39,7 @@ export function JSWeather({ setModal }: props) {
           );
         }}
       />
-      <Test src={weatherGif} alt="" preview={preview}></Test>
+      <LeftPreview src={weatherGif} alt="" preview={preview}></LeftPreview>
       <ContentName>날씨 확인</ContentName>
     </JSWeatherWrapper>
   );

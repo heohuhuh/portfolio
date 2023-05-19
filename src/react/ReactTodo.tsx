@@ -1,19 +1,20 @@
 import ReactTodoJPG from "../imgs/react todo2.jpg";
 import reactTodo from "../imgs/gifs/react todo.gif";
-import { ContentName, Test } from "../Page2";
+import { ContentName, RightPreview } from "../Page2";
 import { ContentCSS, ContentImgCSS } from "../js/JStodo";
 import styled from "styled-components";
 import { useState } from "react";
 
 type props = {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalSwitch: React.Dispatch<React.SetStateAction<string>>;
 };
-export function ReactTodo({ setModal }: props) {
+export function ReactTodo({ setModal, setModalSwitch }: props) {
   const [preview, setPreview] = useState(false);
   return (
     <ReactTodoWrapper>
       <ContentName>TodoList</ContentName>
-      <Test src={reactTodo} alt="" preview={preview}></Test>
+      <RightPreview src={reactTodo} alt="" preview={preview}></RightPreview>
       <ReactTodoImg
         src={ReactTodoJPG}
         alt=""
@@ -24,8 +25,8 @@ export function ReactTodo({ setModal }: props) {
           setPreview(false);
         }}
         onClick={() => {
-          console.log("hi");
           setModal(true);
+          setModalSwitch("ReactTodo");
           return (
             <div
               style={{

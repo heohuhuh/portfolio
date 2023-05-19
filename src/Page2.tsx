@@ -5,7 +5,7 @@ import {
   boxFadeInUP,
   boxFadeOutDown,
 } from "./App";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { JStodo } from "./js/JStodo";
 import { JSWeather } from "./js/JSWeather";
 import { JSTyping } from "./js/JSTyping";
@@ -19,36 +19,48 @@ type propsType = {
   upDown: boolean;
   firstToSecondPage: boolean;
   secondToThirdPage: boolean;
+  modal: boolean;
+  setModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 export function Page2({
   upDown,
   firstToSecondPage,
   secondToThirdPage,
+  modal,
+  setModal,
 }: propsType) {
-  const [modal, setModal] = useState(false);
+  const [modalSwitch, setModalSwitch] = useState("JSTodo");
+
   return (
     <Page2Wrapper
       upDown={upDown}
       firstToSecondPage={firstToSecondPage}
       secondToThirdPage={secondToThirdPage}
     >
-      {modal ? <ProjectModal setModal={setModal} /> : <></>}
+      {modal ? (
+        <ProjectModal setModal={setModal} modalSwitch={modalSwitch} />
+      ) : (
+        <></>
+      )}
       <JS>
         <JSTitle>JavaScript</JSTitle>
         <JSWrapper>
-          <JStodo setModal={setModal} />
-          <JSWeather setModal={setModal} />
-          <JSTyping setModal={setModal} />
-          <JSPuzzle setModal={setModal} />
+          <JStodo setModal={setModal} setModalSwitch={setModalSwitch} />
+          <JSWeather setModal={setModal} setModalSwitch={setModalSwitch} />
+          <JSTyping setModal={setModal} setModalSwitch={setModalSwitch} />
+          <JSPuzzle setModal={setModal} setModalSwitch={setModalSwitch} />
         </JSWrapper>
       </JS>
 
       <React>
         <ReactTitle>React</ReactTitle>
         <ReactWrapper>
-          <ReactTodo setModal={setModal} />
-          <ReactBasebb setModal={setModal} />
-          <ReactInstaclone setModal={setModal} />
+          <ReactTodo setModal={setModal} setModalSwitch={setModalSwitch} />
+          <ReactBasebb setModal={setModal} setModalSwitch={setModalSwitch} />
+          <ReactInstaclone
+            setModal={setModal}
+            setModalSwitch={setModalSwitch}
+          />
         </ReactWrapper>
       </React>
     </Page2Wrapper>
@@ -102,7 +114,17 @@ const Page2Wrapper = styled.div<{
       animation: ${boxFadeOutDown} 0.5s 0s linear;
     `}
 `;
-export const Test = styled.img<{ preview: boolean }>`
+export const LeftPreview = styled.img<{ preview: boolean }>`
+  margin-left: 100px;
+  width: 300px;
+  height: 300px;
+  background-color: #000000;
+  position: absolute;
+  display: none;
+  display: ${({ preview }) => preview && "block"};
+`;
+export const RightPreview = styled.img<{ preview: boolean }>`
+  margin-right: 100px;
   width: 300px;
   height: 300px;
   background-color: #000000;

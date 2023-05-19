@@ -12,13 +12,14 @@ function App() {
   const [upDown, setUpDown] = useState(true);
   const [firstToSecondPage, setFirstToSecondPage] = useState(true);
   const [secondToThirdPage, setSecondToThirdPage] = useState(false);
+  const [modal, setModal] = useState(false);
 
   const outerDivRef = useRef();
   useEffect(() => {
     const wheelHandler = (e: any) => {
       e.preventDefault();
       const { deltaY } = e;
-      if (deltaY > 0) {
+      if (deltaY > 0 && !modal) {
         setUpDown(true);
         // 스크롤 내릴 때
         if (firstPage) {
@@ -30,7 +31,7 @@ function App() {
           setSecondToThirdPage(true);
           setFirstToSecondPage(false);
         }
-      } else {
+      } else if (deltaY <= 0 && !modal) {
         setUpDown(false);
         // 스크롤 올릴 때
         if (thirdPage) {
@@ -67,7 +68,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Wrapper ref={outerDivRef}>
+    <Wrapper ref={outerDivRef} modal={modal}>
       {firstPage ? (
         <>
           <Page1 upDown={upDown} firstToSecondPage={firstToSecondPage} />
@@ -75,6 +76,8 @@ function App() {
             upDown={upDown}
             firstToSecondPage={firstToSecondPage}
             secondToThirdPage={secondToThirdPage}
+            modal={modal}
+            setModal={setModal}
           />
         </>
       ) : secondPage ? (
@@ -85,6 +88,8 @@ function App() {
                 upDown={upDown}
                 firstToSecondPage={firstToSecondPage}
                 secondToThirdPage={secondToThirdPage}
+                modal={modal}
+                setModal={setModal}
               />
               <Page1 upDown={upDown} firstToSecondPage={firstToSecondPage} />
             </>
@@ -94,6 +99,8 @@ function App() {
                 upDown={upDown}
                 firstToSecondPage={firstToSecondPage}
                 secondToThirdPage={secondToThirdPage}
+                modal={modal}
+                setModal={setModal}
               />
               <Page3 upDown={upDown} secondToThirdPage={secondToThirdPage} />
             </>
@@ -106,6 +113,8 @@ function App() {
             upDown={upDown}
             firstToSecondPage={firstToSecondPage}
             secondToThirdPage={secondToThirdPage}
+            modal={modal}
+            setModal={setModal}
           />
         </>
       )}
@@ -116,7 +125,7 @@ function App() {
 
 export default App;
 
-const Wrapper = styled.div<{ ref: any }>`
+const Wrapper = styled.div<{ ref: any; modal: boolean }>`
   width: 100vw;
   height: 100vh;
   overflow-y: hidden;

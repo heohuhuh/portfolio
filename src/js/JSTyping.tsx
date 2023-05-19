@@ -1,14 +1,15 @@
 import JSTypingJPG from "../imgs/typing2.jpg";
 import typingGif from "../imgs/gifs/typing.gif";
 import styled from "styled-components";
-import { Test, ContentName } from "../Page2";
+import { LeftPreview, ContentName } from "../Page2";
 import { ContentCSS, ContentImgCSS } from "./JStodo";
 import { useState } from "react";
 
 type props = {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalSwitch: React.Dispatch<React.SetStateAction<string>>;
 };
-export function JSTyping({ setModal }: props) {
+export function JSTyping({ setModal, setModalSwitch }: props) {
   const [preview, setPreview] = useState(false);
   return (
     <JSTypingWrapper>
@@ -22,8 +23,8 @@ export function JSTyping({ setModal }: props) {
           setPreview(false);
         }}
         onClick={() => {
-          console.log("hi");
           setModal(true);
+          setModalSwitch("JSTyping");
           return (
             <div
               style={{
@@ -38,7 +39,7 @@ export function JSTyping({ setModal }: props) {
           );
         }}
       />
-      <Test src={typingGif} alt="" preview={preview}></Test>
+      <LeftPreview src={typingGif} alt="" preview={preview}></LeftPreview>
       <ContentName>타자 게임</ContentName>
     </JSTypingWrapper>
   );

@@ -1,15 +1,39 @@
 import styled from "styled-components";
 import JStodo from "./imgs/gifs/todo.gif";
+import JSweather from "./imgs/gifs/weather.gif";
+import JStyping from "./imgs/gifs/typing.gif";
+import JSpuzzle from "./imgs/gifs/puzzle.gif";
+import Reacttodo from "./imgs/gifs/react todo.gif";
+import ReactnumberBB from "./imgs/gifs/numberbb.gif";
+import Reactinstaclone from "./imgs/gifs/instaclone.gif";
 import { useState } from "react";
+import {
+  ProjectAccountsContainer,
+  ProjectSummaryContainer,
+} from "./ProjectContents";
 
 type props = {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
+  modalSwitch: string;
 };
-export function ProjectModal({ setModal }: props) {
-  const [modalSwitch, setModalSwitch] = useState("JSTodo");
-  const ModalType: any = {
-    JSTodo: (
-      <img style={{ width: "95%", height: "95%" }} src={JStodo} alt=""></img>
+export function ProjectModal({ setModal, modalSwitch }: props) {
+  const projectImgs: any = {
+    JSTodo: <ProjectImg src={JStodo} alt=""></ProjectImg>,
+    JSWeather: <ProjectImg src={JSweather} alt=""></ProjectImg>,
+    JSTyping: <ProjectImg src={JStyping} alt=""></ProjectImg>,
+
+    JSPuzzle: <ProjectImg src={JSpuzzle} alt=""></ProjectImg>,
+
+    ReactTodo: <ProjectImg src={Reacttodo} alt=""></ProjectImg>,
+
+    ReactNumberBB: <ProjectImg src={ReactnumberBB} alt=""></ProjectImg>,
+
+    ReactInstaclone: (
+      <img
+        style={{ width: "95%", height: "80%" }}
+        src={Reactinstaclone}
+        alt=""
+      ></img>
     ),
   };
   return (
@@ -33,8 +57,12 @@ export function ProjectModal({ setModal }: props) {
         X
       </button>
       <ModalMain onClick={(e) => e.stopPropagation()}>
-        <ModalImg>{ModalType[modalSwitch]}</ModalImg>
-        <ModalAccount>사진과 동영상을 여기다 끌어다 놓으세요</ModalAccount>
+        <ModalImgContainer>{projectImgs[modalSwitch]}</ModalImgContainer>
+        <ModalFooterContainer>
+          <ProjectAccountsContainer modalSwitch={modalSwitch} />
+          <Hr />
+          <ProjectSummaryContainer modalSwitch={modalSwitch} />
+        </ModalFooterContainer>
       </ModalMain>
     </ProjectModalWrapper>
   );
@@ -56,15 +84,17 @@ const ModalMain = styled.div`
   background-color: #ffffff;
   border-radius: 10px;
   border: none;
-  max-width: 820px;
-  max-height: 900px;
-  width: 80%;
+  min-width: 400px;
+  max-width: 800px;
+  min-height: 440px;
+  max-height: 880px;
+  aspect-ratio: 1/1;
   height: 80%;
 `;
 
-const ModalImg = styled.div`
+const ModalImgContainer = styled.div`
   width: 100%;
-  height: 640px;
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,12 +103,24 @@ const ModalImg = styled.div`
   font-size: "14px";
 `;
 
-const ModalAccount = styled.div`
+const ModalFooterContainer = styled.div`
   width: 100%;
-  height: calc(100% - 640px);
+  height: 20%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   font-weight: bold;
   font-size: 14px;
+`;
+
+const ProjectImg = styled.img`
+  height: 95%;
+  aspect-ratio: 1/1;
+`;
+
+const Hr = styled.div`
+  display: flex;
+  background: rgba(0, 0, 0, 0.35);
+  width: 1px;
+  height: 90%;
 `;

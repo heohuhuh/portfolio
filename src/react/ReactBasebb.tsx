@@ -1,19 +1,20 @@
 import ReactNumberbbJPG from "../imgs/ReactNumberbase3.jpg";
 import numberBB from "../imgs/gifs/numberbb.gif";
-import { ContentName, Test } from "../Page2";
+import { ContentName, RightPreview } from "../Page2";
 import { ContentCSS, ContentImgCSS } from "../js/JStodo";
 import styled from "styled-components";
 import { useState } from "react";
 
 type props = {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalSwitch: React.Dispatch<React.SetStateAction<string>>;
 };
-export function ReactBasebb({ setModal }: props) {
+export function ReactBasebb({ setModal, setModalSwitch }: props) {
   const [preview, setPreview] = useState(false);
   return (
     <ReactBasebbWrapper>
       <ContentName>숫자야구</ContentName>
-      <Test src={numberBB} alt="" preview={preview}></Test>
+      <RightPreview src={numberBB} alt="" preview={preview}></RightPreview>
       <ReactBaseballImg
         src={ReactNumberbbJPG}
         alt=""
@@ -24,8 +25,8 @@ export function ReactBasebb({ setModal }: props) {
           setPreview(false);
         }}
         onClick={() => {
-          console.log("hi");
           setModal(true);
+          setModalSwitch("ReactNumberBB");
           return (
             <div
               style={{
