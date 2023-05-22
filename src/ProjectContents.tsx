@@ -7,13 +7,6 @@ type props = {
 
 export function ProjectAccountsContainer({ modalSwitch }: props) {
   const projectRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    console.log(projectRef.current);
-  }, [modalSwitch]);
-
-  function handleClick() {
-    projectRef.current?.focus();
-  }
 
   useEffect(() => {
     const handleScroll = (e: any) => {
@@ -80,24 +73,19 @@ export function ProjectAccountsContainer({ modalSwitch }: props) {
         </Text>
         <Text style={{ marginTop: "5px" }}>
           바닐라JS와 비교하여 완료한 목록도 추가하였으며, 이름 수정기능도
-          추가하되었습니다. 해당 프로젝트는 지인에게 공개하여부족한 점을
-          보완하며 애자일방식에 재미를 알게된 프로젝트입니다.
+          추가하였습니다. 해당 프로젝트는 지인에게 공개하여부족한 점을 보완하며
+          애자일방식에 재미를 알게된 프로젝트입니다.
         </Text>
       </ProjectAccount>
     ),
 
     ReactNumberBB: (
-      <ProjectAccount
-        ref={projectRef}
-        onClick={(e) => {
-          handleClick();
-        }}
-      >
-        <Text style={{ paddingTop: "50px", height: "100%" }}>
+      <ProjectAccount ref={projectRef}>
+        <Text style={{}}>
           다른 지인과 함께 공부를 위해 시작한 머리쓰며 재밌었던 게임을
           만들고자했습니다.
         </Text>
-        <Text style={{ marginTop: "5px", height: "100%" }}>
+        <Text style={{}}>
           시작은 같이 하였으나 흥미를 느끼지 못한 지인이 중도하차하여 혼자
           완성하게되었습니다. Vercel을 통해 간단하게 배포해보았으며, 친구에게
           공개하여 피드백을 받고 몇몇 기능 추가 및 수정을 진행하며 React에 더
@@ -113,7 +101,7 @@ export function ProjectAccountsContainer({ modalSwitch }: props) {
         </Text>
         <Text style={{ marginTop: "5px" }}>
           스타일링에 대해 좀 더 알아가는 계기가 되었으며 반응형 웹 제작 방법에
-          대해 알게된 프로젝트였습니다.
+          대해 더 공부하게 된 프로젝트였습니다.
         </Text>
       </ProjectAccount>
     ),
@@ -177,11 +165,9 @@ export function ProjectSummaryContainer({ modalSwitch }: props) {
 }
 
 const ProjectAccount = styled.div`
-  padding: 20px 20px 0 20px;
+  padding: 0px 20px 0 20px;
   width: 100%;
   height: calc(100% - 30px);
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: auto;
@@ -200,6 +186,8 @@ const ProjectSummary = styled.div`
 
 const Text = styled.div`
   display: flex;
-  height: 100%;
-  padding-top: 5px;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
 `;
