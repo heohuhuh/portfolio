@@ -6,7 +6,6 @@ import JSpuzzle from "./imgs/gifs/puzzle.gif";
 import Reacttodo from "./imgs/gifs/react todo.gif";
 import ReactnumberBB from "./imgs/gifs/numberbb.gif";
 import Reactinstaclone from "./imgs/gifs/instaclone.gif";
-import { useState } from "react";
 import {
   ProjectAccountsContainer,
   ProjectSummaryContainer,
