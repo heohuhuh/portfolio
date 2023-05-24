@@ -1,7 +1,7 @@
 import ReactNumberbbJPG from "../imgs/ReactNumberbase3.jpg";
 import numberBB from "../imgs/gifs/numberbb.gif";
 import { ContentName, RightPreview } from "../Page2";
-import { ContentCSS, ContentImgCSS } from "../js/JStodo";
+import { ReactContentCSS, ReactContentImgCSS } from "./ReactTodo";
 import styled from "styled-components";
 import { useState } from "react";
 
@@ -27,18 +27,6 @@ export function ReactBasebb({ setModal, setModalSwitch }: props) {
         onClick={() => {
           setModal(true);
           setModalSwitch("ReactNumberBB");
-          return (
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundColor: "#000000",
-                position: "absolute",
-              }}
-            >
-              하이
-            </div>
-          );
         }}
       />
     </ReactBasebbWrapper>
@@ -46,8 +34,8 @@ export function ReactBasebb({ setModal, setModalSwitch }: props) {
 }
 
 export const ReactBasebbWrapper = styled.div`
-  ${ContentCSS}
+  ${ReactContentCSS}
 `;
 export const ReactBaseballImg = styled.img`
-  ${ContentImgCSS}
+  ${ReactContentImgCSS}
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import puzzleGif from "../imgs/gifs/puzzle.gif";
 import { LeftPreview, ContentName } from "../Page2";
-import { ContentCSS, ContentImgCSS } from "./JStodo";
+import { JSContentCSS, JSContentImgCSS } from "./JStodo";
 import JSPuzzleJPG from "../imgs/JSPuzzle2.jpg";
 import { useState } from "react";
 
@@ -25,18 +25,6 @@ export function JSPuzzle({ setModal, setModalSwitch }: props) {
         onClick={() => {
           setModal(true);
           setModalSwitch("JSPuzzle");
-          return (
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundColor: "#000000",
-                position: "absolute",
-              }}
-            >
-              하이
-            </div>
-          );
         }}
       />
       <LeftPreview src={puzzleGif} alt="" preview={preview}></LeftPreview>
@@ -46,8 +34,8 @@ export function JSPuzzle({ setModal, setModalSwitch }: props) {
 }
 
 const JSPuzzleWrapper = styled.div`
-  ${ContentCSS}
+  ${JSContentCSS}
 `;
 const JSpuzzleImg = styled.img`
-  ${ContentImgCSS}
+  ${JSContentImgCSS}
 `;

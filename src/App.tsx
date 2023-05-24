@@ -13,13 +13,14 @@ function App() {
   const [firstToSecondPage, setFirstToSecondPage] = useState(true);
   const [secondToThirdPage, setSecondToThirdPage] = useState(false);
   const [modal, setModal] = useState(false);
+  const [scrollable, setScrollable] = useState(true);
 
-  const outerDivRef = useRef();
+  const mainDivRef = useRef();
   useEffect(() => {
     const wheelHandler = (e: any) => {
-      e.preventDefault();
+      e.stopPropagation();
       const { deltaY } = e;
-      if (deltaY > 0 && !modal) {
+      if (deltaY > 0 && !modal && scrollable) {
         setUpDown(true);
         // 스크롤 내릴 때
         if (firstPage) {
@@ -31,7 +32,7 @@ function App() {
           setSecondToThirdPage(true);
           setFirstToSecondPage(false);
         }
-      } else if (deltaY <= 0 && !modal) {
+      } else if (deltaY <= 0 && !modal && scrollable) {
         setUpDown(false);
         // 스크롤 올릴 때
         if (thirdPage) {
@@ -45,10 +46,10 @@ function App() {
         }
       }
     };
-    const outerDivRefCurrent: any = outerDivRef.current;
-    outerDivRefCurrent.addEventListener("wheel", wheelHandler);
+    const mainDivRefCurrent: any = mainDivRef.current;
+    mainDivRefCurrent.addEventListener("wheel", wheelHandler);
     return () => {
-      outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
+      mainDivRefCurrent.removeEventListener("wheel", wheelHandler);
     };
   });
   return (
@@ -68,7 +69,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Wrapper ref={outerDivRef} modal={modal}>
+    <Wrapper ref={mainDivRef} modal={modal}>
       {firstPage ? (
         <>
           <Page1 upDown={upDown} firstToSecondPage={firstToSecondPage} />
@@ -102,13 +103,21 @@ function App() {
                 modal={modal}
                 setModal={setModal}
               />
-              <Page3 upDown={upDown} secondToThirdPage={secondToThirdPage} />
+              <Page3
+                upDown={upDown}
+                secondToThirdPage={secondToThirdPage}
+                setScrollable={setScrollable}
+              />
             </>
           )}
         </>
       ) : (
         <>
-          <Page3 upDown={upDown} secondToThirdPage={secondToThirdPage} />
+          <Page3
+            upDown={upDown}
+            secondToThirdPage={secondToThirdPage}
+            setScrollable={setScrollable}
+          />
           <Page2
             upDown={upDown}
             firstToSecondPage={firstToSecondPage}
@@ -126,6 +135,8 @@ function App() {
 export default App;
 
 const Wrapper = styled.div<{ ref: any; modal: boolean }>`
+  min-width: 1234px;
+  min-height: 840px;
   width: 100vw;
   height: 100vh;
   overflow-y: hidden;

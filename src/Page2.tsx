@@ -14,6 +14,7 @@ import { ProjectModal } from "./ProjectModal";
 import { ReactTodo } from "./react/ReactTodo";
 import { ReactBasebb } from "./react/ReactBasebb";
 import { ReactInstaclone } from "./react/ReactInstaclone";
+import { Font } from "./Page1";
 
 type propsType = {
   upDown: boolean;
@@ -42,27 +43,30 @@ export function Page2({
       ) : (
         <></>
       )}
-      <JS>
-        <JSTitle>JavaScript</JSTitle>
-        <JSWrapper>
-          <JStodo setModal={setModal} setModalSwitch={setModalSwitch} />
-          <JSWeather setModal={setModal} setModalSwitch={setModalSwitch} />
-          <JSTyping setModal={setModal} setModalSwitch={setModalSwitch} />
-          <JSPuzzle setModal={setModal} setModalSwitch={setModalSwitch} />
-        </JSWrapper>
-      </JS>
+      <Container>
+        <JS>
+          <JSTitle>JavaScript</JSTitle>
+          <JSWrapper>
+            <JStodo setModal={setModal} setModalSwitch={setModalSwitch} />
+            <JSWeather setModal={setModal} setModalSwitch={setModalSwitch} />
+            <JSTyping setModal={setModal} setModalSwitch={setModalSwitch} />
+            <JSPuzzle setModal={setModal} setModalSwitch={setModalSwitch} />
+          </JSWrapper>
+        </JS>
 
-      <React>
-        <ReactTitle>React</ReactTitle>
-        <ReactWrapper>
-          <ReactTodo setModal={setModal} setModalSwitch={setModalSwitch} />
-          <ReactBasebb setModal={setModal} setModalSwitch={setModalSwitch} />
-          <ReactInstaclone
-            setModal={setModal}
-            setModalSwitch={setModalSwitch}
-          />
-        </ReactWrapper>
-      </React>
+        <Hr />
+        <React>
+          <ReactTitle>React</ReactTitle>
+          <ReactWrapper>
+            <ReactTodo setModal={setModal} setModalSwitch={setModalSwitch} />
+            <ReactBasebb setModal={setModal} setModalSwitch={setModalSwitch} />
+            <ReactInstaclone
+              setModal={setModal}
+              setModalSwitch={setModalSwitch}
+            />
+          </ReactWrapper>
+        </React>
+      </Container>
     </Page2Wrapper>
   );
 }
@@ -72,7 +76,7 @@ const Page2Wrapper = styled.div<{
   firstToSecondPage: boolean;
   secondToThirdPage: boolean;
 }>`
-  background-color: #ddffff;
+  background-color: #fffd95;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,13 +84,7 @@ const Page2Wrapper = styled.div<{
   width: 100%;
   height: 100%;
   position: relative;
-  @font-face {
-    font-family: "omyu_pretty";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2")
-      format("woff2");
-    font-weight: normal;
-    font-style: normal;
-  }
+  ${Font}
   ${({ upDown, firstToSecondPage }) =>
     upDown &&
     firstToSecondPage &&
@@ -114,6 +112,23 @@ const Page2Wrapper = styled.div<{
       animation: ${boxFadeOutDown} 0.5s 0s linear;
     `}
 `;
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1020px;
+  height: 740px;
+  background-color: #ffffff;
+  border-radius: 20px;
+`;
+
+const Hr = styled.div`
+  display: flex;
+  background: rgba(0, 0, 0, 0.35);
+  width: 2px;
+  height: 80%;
+`;
+
 export const LeftPreview = styled.img<{ preview: boolean }>`
   margin-left: 100px;
   width: 300px;
@@ -122,6 +137,10 @@ export const LeftPreview = styled.img<{ preview: boolean }>`
   position: absolute;
   display: none;
   display: ${({ preview }) => preview && "block"};
+  border-right: solid 2px #aaa;
+  border-top: solid 2px #aaa;
+  border-bottom: solid 2px #aaa;
+  border-radius: 20px;
 `;
 export const RightPreview = styled.img<{ preview: boolean }>`
   margin-right: 100px;
@@ -131,9 +150,12 @@ export const RightPreview = styled.img<{ preview: boolean }>`
   position: absolute;
   display: none;
   display: ${({ preview }) => preview && "block"};
+  border-left: solid 2px #aaa;
+  border-top: solid 2px #aaa;
+  border-bottom: solid 2px #aaa;
+  border-radius: 20px;
 `;
 const MainCSS = css`
-  border: solid 1px black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,7 +164,6 @@ const MainCSS = css`
   height: 640px;
 `;
 export const WrapperCSS = css`
-  border: solid 1px black;
   width: 100%;
   height: 80%;
   display: flex;
@@ -151,7 +172,6 @@ export const WrapperCSS = css`
   flex-direction: column;
 `;
 export const TitleCSS = css`
-  border: solid 1px black;
   width: 100%;
   height: 20%;
   display: flex;

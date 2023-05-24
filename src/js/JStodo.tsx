@@ -24,18 +24,6 @@ export function JStodo({ setModal, setModalSwitch }: props) {
         onClick={() => {
           setModal(true);
           setModalSwitch("JSTodo");
-          return (
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundColor: "#000000",
-                position: "absolute",
-              }}
-            >
-              하이
-            </div>
-          );
         }}
       />
       <LeftPreview src={todoGif} alt="" preview={preview}></LeftPreview>
@@ -44,22 +32,25 @@ export function JStodo({ setModal, setModalSwitch }: props) {
   );
 }
 
-export const ContentCSS = css`
-  width: 100%;
+export const JSContentCSS = css`
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-export const ContentImgCSS = css`
+export const JSContentImgCSS = css`
+  border-left: solid 2px #aaa;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   width: 100px;
   height: 100px;
   cursor: pointer;
 `;
 
 const JStodoWrapper = styled.div`
-  ${ContentCSS}
+  ${JSContentCSS}
 `;
 
 const JSTodoImg = styled.img`
-  ${ContentImgCSS}
+  ${JSContentImgCSS}
 `;

@@ -2,7 +2,7 @@ import JSTypingJPG from "../imgs/typing2.jpg";
 import typingGif from "../imgs/gifs/typing.gif";
 import styled from "styled-components";
 import { LeftPreview, ContentName } from "../Page2";
-import { ContentCSS, ContentImgCSS } from "./JStodo";
+import { JSContentCSS, JSContentImgCSS } from "./JStodo";
 import { useState } from "react";
 
 type props = {
@@ -25,18 +25,6 @@ export function JSTyping({ setModal, setModalSwitch }: props) {
         onClick={() => {
           setModal(true);
           setModalSwitch("JSTyping");
-          return (
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundColor: "#000000",
-                position: "absolute",
-              }}
-            >
-              하이
-            </div>
-          );
         }}
       />
       <LeftPreview src={typingGif} alt="" preview={preview}></LeftPreview>
@@ -46,8 +34,8 @@ export function JSTyping({ setModal, setModalSwitch }: props) {
 }
 
 const JSTypingWrapper = styled.div`
-  ${ContentCSS}
+  ${JSContentCSS}
 `;
 const JStypingImg = styled.img`
-  ${ContentImgCSS}
+  ${JSContentImgCSS}
 `;

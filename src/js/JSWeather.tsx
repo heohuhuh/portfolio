@@ -2,7 +2,7 @@ import JSWeatherJPG from "../imgs/JSweather2.jpg";
 import weatherGif from "../imgs/gifs/weather.gif";
 import styled from "styled-components";
 import { LeftPreview, ContentName } from "../Page2";
-import { ContentCSS, ContentImgCSS } from "./JStodo";
+import { JSContentCSS, JSContentImgCSS } from "./JStodo";
 import { useState } from "react";
 
 type props = {
@@ -25,18 +25,6 @@ export function JSWeather({ setModal, setModalSwitch }: props) {
         onClick={() => {
           setModal(true);
           setModalSwitch("JSWeather");
-          return (
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundColor: "#000000",
-                position: "absolute",
-              }}
-            >
-              하이
-            </div>
-          );
         }}
       />
       <LeftPreview src={weatherGif} alt="" preview={preview}></LeftPreview>
@@ -46,8 +34,8 @@ export function JSWeather({ setModal, setModalSwitch }: props) {
 }
 
 const JSWeatherWrapper = styled.div`
-  ${ContentCSS}
+  ${JSContentCSS}
 `;
 const JSweatherImg = styled.img`
-  ${ContentImgCSS}
+  ${JSContentImgCSS}
 `;

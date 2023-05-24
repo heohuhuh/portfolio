@@ -1,7 +1,7 @@
 import ReactInstacloneJPG from "../imgs/ReactInstaclone.jpg";
 import instaclone from "../imgs/gifs/instaclone.gif";
 import { ContentName, RightPreview } from "../Page2";
-import { ContentCSS, ContentImgCSS } from "../js/JStodo";
+import { ReactContentCSS, ReactContentImgCSS } from "./ReactTodo";
 import styled from "styled-components";
 import { useState } from "react";
 
@@ -27,18 +27,6 @@ export function ReactInstaclone({ setModal, setModalSwitch }: props) {
         onClick={() => {
           setModal(true);
           setModalSwitch("ReactInstaclone");
-          return (
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundColor: "#000000",
-                position: "absolute",
-              }}
-            >
-              하이
-            </div>
-          );
         }}
       />
     </ReactInstacloneWrapper>
@@ -46,8 +34,8 @@ export function ReactInstaclone({ setModal, setModalSwitch }: props) {
 }
 
 export const ReactInstacloneWrapper = styled.div`
-  ${ContentCSS}
+  ${ReactContentCSS}
 `;
 export const ReactInstacloneImg = styled.img`
-  ${ContentImgCSS}
+  ${ReactContentImgCSS}
 `;

@@ -1,8 +1,7 @@
 import ReactTodoJPG from "../imgs/react todo2.jpg";
 import reactTodo from "../imgs/gifs/react todo.gif";
 import { ContentName, RightPreview } from "../Page2";
-import { ContentCSS, ContentImgCSS } from "../js/JStodo";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { useState } from "react";
 
 type props = {
@@ -27,27 +26,29 @@ export function ReactTodo({ setModal, setModalSwitch }: props) {
         onClick={() => {
           setModal(true);
           setModalSwitch("ReactTodo");
-          return (
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundColor: "#000000",
-                position: "absolute",
-              }}
-            >
-              하이
-            </div>
-          );
         }}
       />
     </ReactTodoWrapper>
   );
 }
 
+export const ReactContentCSS = css`
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const ReactContentImgCSS = css`
+  border-right: solid 2px #aaa;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+`;
 const ReactTodoWrapper = styled.div`
-  ${ContentCSS}
+  ${ReactContentCSS}
 `;
 const ReactTodoImg = styled.img`
-  ${ContentImgCSS}
+  ${ReactContentImgCSS}
 `;

@@ -9,14 +9,22 @@ type propsType = {
 export function Page1({ upDown, firstToSecondPage }: propsType) {
   return (
     <Page1Wrapper upDown={upDown} firstToSecondPage={firstToSecondPage}>
-      <Photo src={ProfilePhoto} alt="ProfilePhoto" />
+      {/* <Photo src={ProfilePhoto} alt="ProfilePhoto" /> */}
+      <Introduce>
+        <div>신입 웹 개발자</div>
+        <div>포트폴리오</div>
+      </Introduce>
 
       <Profile>
         <Name>허 진 욱</Name>
-        <Age>29세(만 28세)</Age>
-        <Home>경기도 수원시 팔달구 구천동</Home>
-        <Study>React, TypeScript, JavaScript, CSS </Study>
-        <License>정보처리기사, 항공무선통신사 등</License>
+        <ProfileUp>
+          <Age>1995. 3. 28</Age>
+          <Home>경기도 수원시 팔달구</Home>
+        </ProfileUp>
+        <ProfileDown>
+          <Email>wlsdnr3636@gmail.com</Email>
+          <License>정보처리기사, 항공무선통신사 등</License>
+        </ProfileDown>
       </Profile>
     </Page1Wrapper>
   );
@@ -28,6 +36,7 @@ const Page1Wrapper = styled.div<{
 }>`
   background-color: #ddffff;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -48,6 +57,15 @@ const Page1Wrapper = styled.div<{
     `}
 `;
 
+export const Font = css`
+  @font-face {
+    font-family: "omyu_pretty";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2")
+      format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+`;
 const Photo = styled.img`
   border-radius: 100px;
   display: flex;
@@ -56,68 +74,76 @@ const Photo = styled.img`
   width: 460px;
   height: 590px;
 `;
-
-const Profile = styled.div`
+const Introduce = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  width: 460px;
-  height: 640px;
-  @font-face {
-    font-family: "omyu_pretty";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2")
-      format("woff2");
-    font-weight: normal;
-    font-style: normal;
-  }
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  font-size: 90px;
+  font-family: "omyu_pretty";
+  color: rgb(0, 0, 0, 0.75);
+`;
+const Profile = styled.div`
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
   font-family: "omyu_pretty";
 `;
-
+const ProfileUp = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 40%;
+`;
+const ProfileDown = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 40%;
+`;
+const ProfileStyle = css`
+  color: rgb(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  width: 300px;
+  background: linear-gradient(to bottom, #ffffff 20%, #ddffff);
+  border-image-slice: 1;
+  border-radius: 50px;
+  //background: #fff;
+  box-shadow: 2px 2px #aaa;
+  padding: 25px;
+  font-size: 23px;
+`;
 const Name = styled.div`
+  color: rgb(0, 0, 0, 0.9);
   width: 100%;
+  height: 20%;
   font-weight: bold;
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 50px;
   margin-bottom: 20px;
 `;
 const Age = styled.div`
-  //border: 3px solid;
-  width: 100%;
-  background: linear-gradient(to left, #ddffff 50%, #bfcbff);
-  border-image-slice: 1;
-  border-radius: 50px;
-  //background: #fff;
-  //box-shadow: 2px 2px #aaa;
-  padding: 25px;
-  margin: 25px;
-  font-size: 23px;
+  ${ProfileStyle}
 `;
 const Home = styled.div`
-  width: 100%;
-  background: linear-gradient(to left, #ddffff 30%, #bfcbff);
-  border-image-slice: 1;
-  border-radius: 50px;
-  padding: 25px;
-  margin: 25px;
-  font-size: 23px;
+  ${ProfileStyle}
 `;
-const Study = styled.div`
-  width: 100%;
-  background: linear-gradient(to left, #ddffff 15%, #bfcbff);
-  border-image-slice: 1;
-  border-radius: 50px;
-  padding: 25px;
-  margin: 25px;
-  font-size: 23px;
+const Email = styled.div`
+  ${ProfileStyle}
 `;
 const License = styled.div`
-  width: 100%;
-  background: linear-gradient(to left, #ddffff 00%, #bfcbff);
-  border-image-slice: 1;
-  border-radius: 50px;
-  padding: 25px;
-  margin: 25px;
-  font-size: 23px;
+  ${ProfileStyle}
 `;
