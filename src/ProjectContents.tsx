@@ -124,59 +124,180 @@ export function ProjectSummaryContainer({ modalSwitch }: props) {
   const projectSummary: any = {
     JSTodo: (
       <ProjectSummary>
-        <TextRight>주요 기능 : 투두리스트 관리,추가,삭제</TextRight>
-        <TextRight>기술 스택 : HTML, CSS, JavaScript</TextRight>
-        <TextRight>GitHub : </TextRight>
+        <TextRight>
+          <TextRightTitle>주요 기능</TextRightTitle>:
+          <TextRightAccount>투두리스트 관리,추가,삭제</TextRightAccount>
+        </TextRight>
+        <TextRight>
+          <TextRightTitle>기술 스택 </TextRightTitle>:
+          <TextRightAccount>HTML, CSS, JavaScript</TextRightAccount>
+        </TextRight>
+        <TextRight>
+          <TextRightTitle>GitHub</TextRightTitle>:
+          <TextRightAccount>
+            <a
+              href="https://github.com/heohuhuh/gggigi"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://github.com/heohuhuh/gggigi
+            </a>
+          </TextRightAccount>
+        </TextRight>
       </ProjectSummary>
     ),
     JSWeather: (
       <ProjectSummary>
-        <TextRight>주요 기능 : 지역별 날씨 확인</TextRight>
-        <TextRight>기술 스택 : HTML, CSS, JavaScript</TextRight>
-        <TextRight>GitHub : </TextRight>
+        <TextRight>
+          <TextRightTitle>주요 기능 </TextRightTitle>:
+          <TextRightAccount>지역별 날씨 확인</TextRightAccount>
+        </TextRight>
+        <TextRight>
+          <TextRightTitle>기술 스택 </TextRightTitle>:
+          <TextRightAccount>HTML, CSS, JavaScript</TextRightAccount>
+        </TextRight>
+        <TextRight>
+          <TextRightTitle>GitHub</TextRightTitle>:
+          <TextRightAccount>
+            <a
+              href="https://github.com/heohuhuh/gggigi"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://github.com/heohuhuh/gggigi
+            </a>
+          </TextRightAccount>
+        </TextRight>
       </ProjectSummary>
     ),
     JSTyping: (
       <ProjectSummary>
-        <TextRight>주요 기능 : 한 단어별 제한시간 5초의 타자게임</TextRight>
-        <TextRight>기술 스택 : HTML, CSS, JavaScript</TextRight>
-        <TextRight>GitHub : </TextRight>
+        <TextRight>
+          <TextRightTitle>주요 기능 </TextRightTitle>:
+          <TextRightAccount>한 단어별 제한시간 5초의 타자게임</TextRightAccount>
+        </TextRight>
+        <TextRight>
+          <TextRightTitle>기술 스택 </TextRightTitle>:
+          <TextRightAccount>HTML, CSS, JavaScript</TextRightAccount>
+        </TextRight>
+        <TextRight>
+          <TextRightTitle>GitHub</TextRightTitle>:
+          <TextRightAccount>
+            <a
+              href="https://github.com/heohuhuh/gggigi"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://github.com/heohuhuh/gggigi
+            </a>
+          </TextRightAccount>
+        </TextRight>
       </ProjectSummary>
     ),
 
     JSPuzzle: (
       <ProjectSummary>
         <TextRight>
-          주요 기능 : 미리보기 3초의 시간 후 30초 안에 퍼즐을 완성하는 게임
+          <TextRightTitle>주요 기능</TextRightTitle>:
+          <TextRightAccount>
+            미리보기 3초의 시간 후 30초 안에 퍼즐을 완성하는 게임
+          </TextRightAccount>
         </TextRight>
-        <TextRight>기술 스택 : HTML, CSS, JavaScript</TextRight>
-        <TextRight>GitHub : </TextRight>
+        <TextRight>
+          <TextRightTitle>기술 스택</TextRightTitle>:
+          <TextRightAccount>HTML, CSS, JavaScript</TextRightAccount>
+        </TextRight>
+        <TextRight>
+          <TextRightTitle>GitHub</TextRightTitle>:
+          <TextRightAccount>
+            <a
+              href="https://github.com/heohuhuh/gggigi"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://github.com/heohuhuh/gggigi
+            </a>
+          </TextRightAccount>
+        </TextRight>
       </ProjectSummary>
     ),
 
     ReactTodo: (
       <ProjectSummary>
-        <TextRight>주요 기능 : 투두리스트 관리,추가,수정,삭제,저장</TextRight>
-        <TextRight>기술 스택 : React, TypeScript, LocalForage</TextRight>
-        <TextRight>GitHub : </TextRight>
+        <TextRight>
+          <TextRightTitle>주요 기능 </TextRightTitle> :
+          <TextRightAccount>
+            투두리스트 관리,추가,수정,삭제,저장
+          </TextRightAccount>
+        </TextRight>
+        <TextRight>
+          <TextRightTitle>기술 스택 </TextRightTitle> :
+          <TextRightAccount>React, TypeScript</TextRightAccount>
+        </TextRight>
+        <TextRight>
+          <TextRightTitle>GitHub</TextRightTitle> :
+          <TextRightAccount>
+            <a
+              href="https://github.com/heohuhuh/todotodo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://github.com/heohuhuh/todotodo
+            </a>
+          </TextRightAccount>
+        </TextRight>
       </ProjectSummary>
     ),
 
     ReactNumberBB: (
       <ProjectSummary>
         <TextRight>
-          주요 기능 : 3~5자리 선택하여 진행하는 숫자야구 게임
+          <TextRightTitle>주요 기능 </TextRightTitle> :
+          <TextRightAccount>
+            3~5자리 선택하여 진행하는 숫자야구 게임
+          </TextRightAccount>
         </TextRight>
-        <TextRight>기술 스택 : React, TypeScript</TextRight>
-        <TextRight>GitHub : </TextRight>
+        <TextRight>
+          <TextRightTitle>기술 스택 </TextRightTitle>:
+          <TextRightAccount>React, TypeScript</TextRightAccount>
+        </TextRight>
+        <TextRight>
+          <TextRightTitle>GitHub</TextRightTitle> :
+          <TextRightAccount>
+            <a
+              href="https://github.com/jjjl-coding/number_baseball"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://github.com/jjjl-coding/number_baseball
+            </a>
+          </TextRightAccount>
+        </TextRight>
       </ProjectSummary>
     ),
 
     ReactInstaclone: (
       <ProjectSummary>
-        <TextRight>주요 기능 : 인스타그램 클론 코딩</TextRight>
-        <TextRight>기술 스택 : React, TypeScript</TextRight>
-        <TextRight>GitHub : </TextRight>
+        <TextRight>
+          <TextRightTitle>주요 기능</TextRightTitle> :
+          <TextRightAccount>인스타그램 클론 코딩</TextRightAccount>
+        </TextRight>
+        <TextRight>
+          <TextRightTitle>기술 스택</TextRightTitle> :
+          <TextRightAccount>React, TypeScript</TextRightAccount>
+        </TextRight>
+        <TextRight>
+          <TextRightTitle>GitHub</TextRightTitle> :
+          <TextRightAccount>
+            <a
+              href="https://github.com/jjjl-coding/-instata_clone"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://github.com/jjjl-coding/-instata_clone
+            </a>
+          </TextRightAccount>
+        </TextRight>
       </ProjectSummary>
     ),
   };
@@ -222,12 +343,23 @@ const TextLeft = styled.div`
 
   width: 100%;
 `;
-
+const TextRightTitle = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 65px;
+`;
+const TextRightAccount = styled.div`
+  width: calc(100% - 70px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
 const TextRight = styled.div`
   font-size: 15px;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 
   width: 100%;
 `;

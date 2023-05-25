@@ -135,8 +135,9 @@ function App() {
 export default App;
 
 const Wrapper = styled.div<{ ref: any; modal: boolean }>`
-  min-width: 1234px;
-  min-height: 840px;
+  min-width: 1024px;
+  min-height: 764px;
+
   width: 100vw;
   height: 100vh;
   overflow-y: hidden;

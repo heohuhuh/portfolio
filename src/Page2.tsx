@@ -116,8 +116,8 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1020px;
-  height: 740px;
+  width: 1004px;
+  height: 744px;
   background-color: #ffffff;
   border-radius: 20px;
 `;
@@ -160,25 +160,25 @@ const MainCSS = css`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 460px;
+  width: 512px;
   height: 640px;
 `;
-export const WrapperCSS = css`
-  width: 100%;
-  height: 80%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-`;
 export const TitleCSS = css`
-  width: 100%;
+  width: 90%;
   height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 50px;
   font-family: "omyu_pretty";
+`;
+export const WrapperCSS = css`
+  width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 `;
 // export const ContentCSS = css`
 //   width: 100%;

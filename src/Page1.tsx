@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { boxFadeInUP, boxFadeOutDown } from "./App";
-import ProfilePhoto from "./imgs/허진욱님_증명사진.jpg";
 
 type propsType = {
   upDown: boolean;
@@ -11,7 +10,7 @@ export function Page1({ upDown, firstToSecondPage }: propsType) {
     <Page1Wrapper upDown={upDown} firstToSecondPage={firstToSecondPage}>
       {/* <Photo src={ProfilePhoto} alt="ProfilePhoto" /> */}
       <Introduce>
-        <div>신입 웹 개발자</div>
+        <div>신입 웹 개발자 지원자</div>
         <div>포트폴리오</div>
       </Introduce>
 
@@ -65,14 +64,6 @@ export const Font = css`
     font-weight: normal;
     font-style: normal;
   }
-`;
-const Photo = styled.img`
-  border-radius: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 460px;
-  height: 590px;
 `;
 const Introduce = styled.div`
   display: flex;
