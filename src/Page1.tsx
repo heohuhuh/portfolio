@@ -15,12 +15,13 @@ export function Page1({ upDown, firstToSecondPage }: propsType) {
       </Introduce>
 
       <Profile>
-        <Name>허 진 욱</Name>
         <ProfileUp>
           <Age>1995. 3. 28</Age>
+          <Name>허 진 욱</Name>
           <Home>경기도 수원시 팔달구</Home>
         </ProfileUp>
         <ProfileDown>
+          <PhoneNum>010-3092-1378</PhoneNum>
           <Email>wlsdnr3636@gmail.com</Email>
           <License>정보처리기사, 항공무선통신사 등</License>
         </ProfileDown>
@@ -113,18 +114,22 @@ const ProfileStyle = css`
   //background: #fff;
   box-shadow: 2px 2px #aaa;
   padding: 25px;
+  margin: 25px;
   font-size: 23px;
 `;
 const Name = styled.div`
-  color: rgb(0, 0, 0, 0.9);
+  /* color: rgb(0, 0, 0, 0.9);
   width: 100%;
-  height: 20%;
+  height: 20%; */
+  ${ProfileStyle}
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
-  margin-bottom: 20px;
+  font-size: 30px;
+`;
+const PhoneNum = styled.div`
+  ${ProfileStyle}
 `;
 const Age = styled.div`
   ${ProfileStyle}
