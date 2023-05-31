@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import { LeftPreview, ContentName } from "../Page2";
-import JSTodoJPG from "../imgs/todo2.jpg";
-import todoGif from "../imgs/gifs/todo.gif";
+import { LeftPreview, ContentName } from "../../Page2";
+import JSTodoJPG from "../../imgs/todo2.jpg";
+import todoGif from "../../imgs/gifs/todo.gif";
 import { useState } from "react";
 
 type props = {

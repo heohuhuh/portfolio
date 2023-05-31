@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import puzzleGif from "../imgs/gifs/puzzle.gif";
-import { LeftPreview, ContentName } from "../Page2";
+import puzzleGif from "../../imgs/gifs/puzzle.gif";
+import { LeftPreview, ContentName } from "../../Page2";
 import { JSContentCSS, JSContentImgCSS } from "./JStodo";
-import JSPuzzleJPG from "../imgs/JSPuzzle2.jpg";
+import JSPuzzleJPG from "../../imgs/JSPuzzle2.jpg";
 import { useState } from "react";
 
 type props = {

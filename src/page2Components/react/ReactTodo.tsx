@@ -1,6 +1,6 @@
-import ReactTodoJPG from "../imgs/react todo2.jpg";
-import reactTodo from "../imgs/gifs/react todo.gif";
-import { ContentName, RightPreview } from "../Page2";
+import ReactTodoJPG from "../../imgs/react todo2.jpg";
+import reactTodo from "../../imgs/gifs/react todo.gif";
+import { ContentName, RightPreview } from "../../Page2";
 import styled, { css } from "styled-components";
 import { useState } from "react";
 

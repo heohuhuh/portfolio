@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { Font } from "./Page1";
+import { Font } from "../Page1";
 
 type props = {
   modalSwitch: string;

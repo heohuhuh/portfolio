@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import JStodo from "./imgs/gifs/todo.gif";
-import JSweather from "./imgs/gifs/weather.gif";
-import JStyping from "./imgs/gifs/typing.gif";
-import JSpuzzle from "./imgs/gifs/puzzle.gif";
-import Reacttodo from "./imgs/gifs/react todo.gif";
-import ReactnumberBB from "./imgs/gifs/numberbb.gif";
-import Reactinstaclone from "./imgs/gifs/instaclone.gif";
+import JStodo from "../imgs/gifs/todo.gif";
+import JSweather from "../imgs/gifs/weather.gif";
+import JStyping from "../imgs/gifs/typing.gif";
+import JSpuzzle from "../imgs/gifs/puzzle.gif";
+import Reacttodo from "../imgs/gifs/react todo.gif";
+import ReactnumberBB from "../imgs/gifs/numberbb.gif";
+import Reactinstaclone from "../imgs/gifs/instaclone.gif";
 import {
   ProjectAccountsContainer,
   ProjectSummaryContainer,

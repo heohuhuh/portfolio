@@ -1,6 +1,6 @@
-import ReactNumberbbJPG from "../imgs/ReactNumberbase3.jpg";
-import numberBB from "../imgs/gifs/numberbb.gif";
-import { ContentName, RightPreview } from "../Page2";
+import ReactNumberbbJPG from "../../imgs/ReactNumberbase3.jpg";
+import numberBB from "../../imgs/gifs/numberbb.gif";
+import { ContentName, RightPreview } from "../../Page2";
 import { ReactContentCSS, ReactContentImgCSS } from "./ReactTodo";
 import styled from "styled-components";
 import { useState } from "react";

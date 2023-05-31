@@ -5,15 +5,15 @@ import {
   boxFadeInUP,
   boxFadeOutDown,
 } from "./App";
-import { useEffect, useRef, useState } from "react";
-import { JStodo } from "./js/JStodo";
-import { JSWeather } from "./js/JSWeather";
-import { JSTyping } from "./js/JSTyping";
-import { JSPuzzle } from "./js/JSPuzzle";
-import { ProjectModal } from "./ProjectModal";
-import { ReactTodo } from "./react/ReactTodo";
-import { ReactBasebb } from "./react/ReactBasebb";
-import { ReactInstaclone } from "./react/ReactInstaclone";
+import { useState } from "react";
+import { JStodo } from "./page2Components/js/JStodo";
+import { JSWeather } from "./page2Components/js/JSWeather";
+import { JSTyping } from "./page2Components/js/JSTyping";
+import { JSPuzzle } from "./page2Components/js/JSPuzzle";
+import { ProjectModal } from "./page2Components/ProjectModal";
+import { ReactTodo } from "./page2Components/react/ReactTodo";
+import { ReactBasebb } from "./page2Components/react/ReactBasebb";
+import { ReactInstaclone } from "./page2Components/react/ReactInstaclone";
 import { Font } from "./Page1";
 
 type propsType = {

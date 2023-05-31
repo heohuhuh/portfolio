@@ -1,7 +1,7 @@
-import JSWeatherJPG from "../imgs/JSweather2.jpg";
-import weatherGif from "../imgs/gifs/weather.gif";
+import JSWeatherJPG from "../../imgs/JSweather2.jpg";
+import weatherGif from "../../imgs/gifs/weather.gif";
 import styled from "styled-components";
-import { LeftPreview, ContentName } from "../Page2";
+import { LeftPreview, ContentName } from "../../Page2";
 import { JSContentCSS, JSContentImgCSS } from "./JStodo";
 import { useState } from "react";
 

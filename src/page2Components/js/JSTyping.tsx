@@ -1,7 +1,7 @@
-import JSTypingJPG from "../imgs/typing2.jpg";
-import typingGif from "../imgs/gifs/typing.gif";
+import JSTypingJPG from "../../imgs/typing2.jpg";
+import typingGif from "../../imgs/gifs/typing.gif";
 import styled from "styled-components";
-import { LeftPreview, ContentName } from "../Page2";
+import { LeftPreview, ContentName } from "../../Page2";
 import { JSContentCSS, JSContentImgCSS } from "./JStodo";
 import { useState } from "react";
 

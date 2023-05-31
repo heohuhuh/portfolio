@@ -1,6 +1,6 @@
-import ReactInstacloneJPG from "../imgs/ReactInstaclone.jpg";
-import instaclone from "../imgs/gifs/instaclone.gif";
-import { ContentName, RightPreview } from "../Page2";
+import ReactInstacloneJPG from "../../imgs/ReactInstaclone.jpg";
+import instaclone from "../../imgs/gifs/instaclone.gif";
+import { ContentName, RightPreview } from "../../Page2";
 import { ReactContentCSS, ReactContentImgCSS } from "./ReactTodo";
 import styled from "styled-components";
 import { useState } from "react";
