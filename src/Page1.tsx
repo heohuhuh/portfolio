@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { boxFadeInUP, boxFadeOutDown } from "./App";
+import scrollGif from "./imgs/gifs/scroll2.gif";
 
 type propsType = {
   upDown: boolean;
@@ -35,6 +36,7 @@ export function Page1({ upDown, firstToSecondPage }: propsType) {
           </Age>
         </ProfileDown>
       </Profile>
+      <ScrollGif src={scrollGif} alt="" />
     </Page1Wrapper>
   );
 }
@@ -66,6 +68,12 @@ const Page1Wrapper = styled.div<{
     `}
 `;
 
+const ScrollGif = styled.img`
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+`;
 export const Font = css`
   @font-face {
     font-family: "omyu_pretty";
