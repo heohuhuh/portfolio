@@ -82,8 +82,8 @@ export function ProjectAccountsContainer({ modalSwitch }: props) {
           추가하였습니다.
         </TextLeft>
         <TextLeft>
-          해당 프로젝트는 지인에게 공개하여 부족한 점을 보완하며 애자일방식에
-          재미를 알게된 프로젝트입니다.
+          해당 프로젝트는 지인에게 공개하여 부족한 점을 보완하며 애자일방식의
+          재미와 리팩토링의 중요성을 알게된 프로젝트입니다.
         </TextLeft>
       </ProjectAccount>
     ),
