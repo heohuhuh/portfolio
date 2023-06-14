@@ -73,6 +73,7 @@ export function ProjectAccountsContainer({ modalSwitch }: props) {
 
     ReactTodo: (
       <ProjectAccount ref={projectRef}>
+        <TextLeft>{"<1인 개발>"}</TextLeft>
         <TextLeft>
           React를 통해 처음 만들며 LocalForage를 사용하여 본 투두리스트입니다.
         </TextLeft>
@@ -89,6 +90,7 @@ export function ProjectAccountsContainer({ modalSwitch }: props) {
 
     ReactNumberBB: (
       <ProjectAccount ref={projectRef}>
+        <TextLeft>{"<2인 시작/1인 완성>"}</TextLeft>
         <TextLeft>
           다른 지인과 함께 공부를 위해 시작한 머리쓰며 재밌었던 게임을
           만들고자했습니다.
@@ -107,6 +109,7 @@ export function ProjectAccountsContainer({ modalSwitch }: props) {
 
     ReactInstaclone: (
       <ProjectAccount ref={projectRef}>
+        <TextLeft>{"<1인 개발>"}</TextLeft>
         <TextLeft>
           클론코딩을 진행해보고자하여 인스타그램으로 선택하여 만들었습니다.
         </TextLeft>
