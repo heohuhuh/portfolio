@@ -15,6 +15,8 @@ import { ReactTodo } from "./page2Components/react/ReactTodo";
 import { ReactBasebb } from "./page2Components/react/ReactBasebb";
 import { ReactInstaclone } from "./page2Components/react/ReactInstaclone";
 import { Font } from "./Page1";
+import JSLogo from "./imgs/JSLogo.jpg";
+import ReactLogo from "./imgs/ReactLogo.png";
 
 type propsType = {
   upDown: boolean;
@@ -45,7 +47,9 @@ export function Page2({
       )}
       <Container>
         <JS>
-          <JSTitle>JavaScript</JSTitle>
+          <JSTitle>
+            <JSTitleImg src={JSLogo} alt=""></JSTitleImg>
+          </JSTitle>
           <JSWrapper>
             <JStodo setModal={setModal} setModalSwitch={setModalSwitch} />
             <JSWeather setModal={setModal} setModalSwitch={setModalSwitch} />
@@ -56,7 +60,9 @@ export function Page2({
 
         <Hr />
         <React>
-          <ReactTitle>React</ReactTitle>
+          <ReactTitle>
+            <ReactTitleImg src={ReactLogo} alt=""></ReactTitleImg>
+          </ReactTitle>
           <ReactWrapper>
             <ReactTodo setModal={setModal} setModalSwitch={setModalSwitch} />
             <ReactBasebb setModal={setModal} setModalSwitch={setModalSwitch} />
@@ -206,6 +212,10 @@ const JS = styled.div`
 const JSTitle = styled.div`
   ${TitleCSS}
 `;
+const JSTitleImg = styled.img`
+  width: 60%;
+  height: 60%;
+`;
 const JSWrapper = styled.div`
   ${WrapperCSS}
 `;
@@ -215,6 +225,10 @@ const React = styled.div`
 `;
 const ReactTitle = styled.div`
   ${TitleCSS}
+`;
+const ReactTitleImg = styled.img`
+  width: 60%;
+  height: 60%;
 `;
 const ReactWrapper = styled.div`
   ${WrapperCSS}
